@@ -61,6 +61,7 @@ export default function PersistentDrawerLeft() {
     const auth = useSelector(state => state.auth);
     const dispatch = useDispatch();
     const navigate = useNavigate();
+    const logoCSS = { maxWidth: '5%', paddingTop: '1%' };
 
     const performLogout = async () => {
         try {
@@ -111,7 +112,7 @@ export default function PersistentDrawerLeft() {
                         </IconButton>
                         <Typography variant="h6" noWrap component="div">
                             <Link to='/'>
-                                <img src={applogo} alt="AppLogo" style={{ maxWidth: '8%', paddingTop: '2%' }} />
+                                <img src={applogo} alt="AppLogo" style={logoCSS} />
                             </Link>
                         </Typography>
                         {auth.isLogged && (
@@ -177,23 +178,16 @@ export default function PersistentDrawerLeft() {
                     </DrawerHeader>
 
                     <List>
-                        <ListItem disablePadding>
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {/* <someIcon /> */}
-                                </ListItemIcon>
-                                <ListItemText primary={'Page 1'} />
-                            </ListItemButton>
-                        </ListItem>
-
-                        <ListItem disablePadding >
-                            <ListItemButton>
-                                <ListItemIcon>
-                                    {/* <InboxIcon /> */}
-                                </ListItemIcon>
-                                <ListItemText primary={'Page 2'} />
-                            </ListItemButton>
-                        </ListItem>
+                        <Link to='/sites/google' style={{ textDecoration: 'none', color: 'black' }}>
+                            <ListItem disablePadding>
+                                <ListItemButton>
+                                    <ListItemIcon>
+                                        {/* <someIcon /> */}
+                                    </ListItemIcon>
+                                    <ListItemText primary={'Google'} />
+                                </ListItemButton>
+                            </ListItem>
+                        </Link>
                     </List>
 
                     {/* Bottom of drawer */}

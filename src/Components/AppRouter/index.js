@@ -7,6 +7,7 @@ import Error from '../Error';
 import ResetPassword from '../ResetPassword';
 import AppBar from '../AppBar';
 import PersonalInfo from '../PersonalInfo';
+import Site from '../Site';
 
 
 function AppRouter() {
@@ -19,6 +20,8 @@ function AppRouter() {
                 <Route exact path='/personalinfo' element={<PersonalInfo />}></Route>
                 <Route exact path='/' element={<Home />}></Route>
                 <Route exact path='/reset-password/:token' element={<ResetPassword />}></Route>
+
+                <Route exact path='/sites/google' element={<Site name='google' url='https://google.com?igu=1' />}></Route>
                 <Route path='*' element={<Error />}></Route>
             </Routes>
         </Router>
